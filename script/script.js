@@ -9,9 +9,11 @@ const gameboard = document.getElementById('gameboard')
 startGame();
 
 function startGame() {
+    $('#gameover').hide()
     cards = createCardsFromTechs(techs);
     shuflleCards(cards);
     createGameBoard(cards);
+
 }
 
 function createGameBoard(cards) {
@@ -57,8 +59,8 @@ function flippedCard() {
             if (checkMatch()) {
                 clearCards();
                 if (checkGameOver()) {
-                    let gameOver = document.getElementById('gameover');
-                    gameOver.style.display = 'flex';
+                    $('#gameover').fadeIn(1000)
+                    
 
 
                 }
