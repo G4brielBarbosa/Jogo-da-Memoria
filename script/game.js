@@ -17,6 +17,7 @@ let firstCard = null;
 let secondCard = null;
 
 
+
 function shuflleCards(cards) {
 
     let currentIndex = cards.length;
@@ -65,9 +66,11 @@ function shuflleCards(cards) {
 
         if(!firstCard){
             firstCard = carta;
+            firstCard.flipped = true;
             return true;
         }else{
             secondCard = carta;
+            secondCard.flipped = true;
             lockMode = true;
             return true
 
@@ -75,13 +78,27 @@ function shuflleCards(cards) {
     }
 
     function checkMatch(){
-        if(secondCard){
-            return firstCard.icon === secondCard.icon
+        if(!firstCard || !secondCard){
+            return false
         }
+        return firstCard.icon === secondCard.icon
     }
 
     function clearCards(){
         firstCard = null;
         secondCard = null;
         lockMode = false;
+    }
+
+    function unflipCards(){
+        firstCard.flipped = false;
+        secondCard.flipped = false;
+        clearCards()
+    }
+
+    function checkGameOver(){
+        
+        return cards.filter(card => !card.flipped).length == 0;
+        
+        
     }

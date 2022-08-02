@@ -15,7 +15,7 @@ function startGame() {
 }
 
 function createGameBoard(cards) {
-
+    gameboard.innerHTML = '';
     cards.forEach((card) => {
         let cardElement = document.createElement('div')
         cardElement.id = card.id;
@@ -53,18 +53,33 @@ function createCardFace(face, card, element) {
 function flippedCard() {
     if (setCard(this.id)) {
         this.classList.add('flip');
-        if (checkMatch()) {
-            clearCards();
-        } else {
-            setTimeout(() => {
-                let firstCardView = document.getElementById(firstCard.id);
-                let secondCardView = document.getElementById(secondCard.id);
+        if (secondCard) {
+            if (checkMatch()) {
+                clearCards();
+                if (checkGameOver()) {
+                    let gameOver = document.getElementById('gameover');
+                    gameOver.style.display = 'flex';
 
-                firstCardView.classList.remove('flip');
-                secondCardView.classList.remove('flip');
-                clearCards()
-            }, 1000)
-            
+
+                }
+            } else {
+                setTimeout(() => {
+                    let firstCardView = document.getElementById(firstCard.id);
+                    let secondCardView = document.getElementById(secondCard.id);
+
+                    firstCardView.classList.remove('flip');
+                    secondCardView.classList.remove('flip');
+                    unflipCards();
+                }, 1000)
+
+            }
         }
     }
+}
+
+function restart() {
+    clearCards();
+    startGame();
+    let gameOver = document.getElementById('gameover');
+    gameOver.style.display = 'none';
 }
