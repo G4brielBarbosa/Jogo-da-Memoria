@@ -13,6 +13,14 @@ Para desenvolver esse projeto foi utilizado essas funcionalidades.
 - CSS3
 - HTML5
 
+<br>
+
+<p align="center">
+  Link para acesso do projeto em produção : https://g4brielbarbosa.github.io/Jogo-da-Memoria/
+</p>
+
+<br>
+
 <h1 align="center"> Demonstração do Projeto </h1>
 
 <br>
