@@ -4,20 +4,19 @@
 
 <h1 align="center"> Descrição do Projeto </h1>
 
-Projeto desenvolvido com o objetivo de praticar o uso do Javascript Puro.
+<br>
 
+
+ Projeto desenvolvido com o objetivo de praticar o uso do Javascript Puro.
+  
 Para desenvolver esse projeto foi utilizado essas funcionalidades.
-
-- Vanilla Js
+  
+- Vanilla Js  
 - Jquery (apenas para animação da tela de gameover)
 - CSS3
 - HTML5
 
-<br>
-
-<p align="center">
   Link para acesso do projeto em produção : https://g4brielbarbosa.github.io/Jogo-da-Memoria/
-</p>
 
 <br>
 
